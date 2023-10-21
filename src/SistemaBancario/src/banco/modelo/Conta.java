@@ -1,4 +1,4 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
 
 import java.text.DecimalFormat;
 
@@ -41,7 +41,7 @@ public class Conta {
 		} else {
 			nome = ((PessoaJuridica)cliente).getRazaoSocial();
 		}
-		return "NÚMERO: "+numero+"\n"+
+		return "Nï¿½MERO: "+numero+"\n"+
 		"CORRENTISTA: "+nome+"\n"+
 		"SALDO: "+DecimalFormat.getCurrencyInstance().format(saldo);
 	}

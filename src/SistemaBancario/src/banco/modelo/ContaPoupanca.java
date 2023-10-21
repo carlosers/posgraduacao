@@ -1,4 +1,7 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
+
+import banco.modelo.Cliente;
+import banco.modelo.Conta;
 
 import java.util.Calendar;
 
@@ -7,7 +10,7 @@ public class ContaPoupanca extends Conta {
 	private int aniversario;
 	private double rendimento;
 	
-	public ContaPoupanca(Cliente cliente) {
+	public ContaPoupanca(banco.modelo.Cliente cliente) {
 		super(cliente);
 		aniversario = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
 		rendimento = 0.52;

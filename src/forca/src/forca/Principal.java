@@ -1,4 +1,4 @@
-package forca;
+package forca.src.forca;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;

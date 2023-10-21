@@ -1,4 +1,8 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
+
+import banco.modelo.Cliente;
+import banco.modelo.Conta;
+import banco.modelo.PessoaFisica;
 
 import java.text.DecimalFormat;
 
@@ -7,7 +11,7 @@ public class ContaCorrente extends Conta {
 	private double limite;
 	private double juros;
 	
-	public ContaCorrente(Cliente cliente) {
+	public ContaCorrente(banco.modelo.Cliente cliente) {
 		super(cliente);
 		limite = 1000;
 		juros = 5.9;
@@ -38,7 +42,7 @@ public class ContaCorrente extends Conta {
     @Override
     public String listarDados() {
     	String nome;
-    	if(cliente instanceof PessoaFisica) {
+    	if(cliente instanceof banco.modelo.PessoaFisica) {
     		nome = ((PessoaFisica)cliente).getNome();
     	} else {
     		nome = ((PessoaJuridica)cliente).getRazaoSocial();

@@ -1,4 +1,4 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
 
 public class Cliente {
 
@@ -27,8 +27,8 @@ public class Cliente {
 	public Cliente() {
 		quantidade++;
 		codigo = quantidade;
-		cidade = "São Paulo";
-		estado = "São Paulo";
+		cidade = "Sï¿½o Paulo";
+		estado = "Sï¿½o Paulo";
 	}
 
 	public Cliente(String cidade, String estado) {
@@ -39,7 +39,7 @@ public class Cliente {
 	}
 	
 	public String listarDados() {
-		return 	"CÓDIGO: "+ codigo + "\n" +
+		return 	"Cï¿½DIGO: "+ codigo + "\n" +
 				"CIDADE: "+cidade+"\n"+
 				"ESTADO: "+estado;
 	}

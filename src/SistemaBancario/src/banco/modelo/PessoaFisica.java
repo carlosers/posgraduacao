@@ -1,4 +1,6 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
+
+import banco.modelo.Cliente;
 
 public class PessoaFisica extends Cliente {
 	

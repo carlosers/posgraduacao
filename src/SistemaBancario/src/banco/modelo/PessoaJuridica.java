@@ -1,4 +1,6 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
+
+import banco.modelo.Cliente;
 
 public class PessoaJuridica extends Cliente {
 
@@ -35,6 +37,6 @@ public class PessoaJuridica extends Cliente {
 	}
 
 	public String listarDados() {
-		return "RAZÃO SOCIAL: "+razaoSocial+"\n"+"CNPJ: "+cnpj+"\n"+super.listarDados();
+		return "RAZï¿½O SOCIAL: "+razaoSocial+"\n"+"CNPJ: "+cnpj+"\n"+super.listarDados();
 	}
 }

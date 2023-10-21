@@ -1,4 +1,4 @@
-package forca;
+package forca.src.forca;
 
 import java.util.Random;
 

@@ -1,4 +1,6 @@
-package banco.modelo;
+package SistemaBancario.src.banco.modelo;
+
+import banco.modelo.Conta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ public class Agencia {
 
 	private int numero;
 	private String nome;
-	private List<Conta> contas;
+	private List<banco.modelo.Conta> contas;
 	
 	public Agencia(int numero, String nome) {
 		this.numero = numero;
@@ -23,11 +25,11 @@ public class Agencia {
 		return nome;
 	}
 	
-	public List<Conta> getContas(){
+	public List<banco.modelo.Conta> getContas(){
 		return contas;
 	}
 	
-	public void incluirConta(Conta conta) {
+	public void incluirConta(banco.modelo.Conta conta) {
 		contas.add(conta);
 	}
 	

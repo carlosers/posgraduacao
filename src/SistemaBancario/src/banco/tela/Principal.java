@@ -1,28 +1,28 @@
-package banco.tela;
+package SistemaBancario.src.banco.tela;
 
 import javax.swing.JOptionPane;
 
-import banco.modelo.Agencia;
-import banco.modelo.Cliente;
-import banco.modelo.Conta;
-import banco.modelo.ContaCorrente;
-import banco.modelo.ContaPoupanca;
-import banco.modelo.PessoaFisica;
-import banco.modelo.PessoaJuridica; 
+import SistemaBancario.src.banco.modelo.Agencia;
+import SistemaBancario.src.banco.modelo.Cliente;
+import SistemaBancario.src.banco.modelo.Conta;
+import SistemaBancario.src.banco.modelo.ContaCorrente;
+import SistemaBancario.src.banco.modelo.ContaPoupanca;
+import SistemaBancario.src.banco.modelo.PessoaFisica;
+import SistemaBancario.src.banco.modelo.PessoaJuridica;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		Agencia agencia = new Agencia(1, "São Paulo - Centro");
+		Agencia agencia = new Agencia(1, "Sï¿½o Paulo - Centro");
 		String opcaoPrincipal="";
 		int aniversario = 10;
 		double rendimento = 5;
 		
 		do {
-			opcaoPrincipal = JOptionPane.showInputDialog(null, "Cadastro de Contas para a agência "
+			opcaoPrincipal = JOptionPane.showInputDialog(null, "Cadastro de Contas para a agï¿½ncia "
 					+ agencia.getNumero()+" - "+agencia.getNome()+"\n"
-					+ "\nOPÇÕES:\n"
+					+ "\nOPï¿½ï¿½ES:\n"
 					+ "1 - Incluir cliente e conta\n"
 					+ "2 - Listar cntas cadastradas\n"
 					+ "3 - Sair do sistema");
@@ -31,7 +31,7 @@ public class Principal {
 				
 				Cliente cliente = new Cliente();
 				String tipoCliente = JOptionPane.showInputDialog(null,"Escolha o tipo de cliente:\n"+
-						"F - Pessa Física\nJ - Pessoa Jurídica");
+						"F - Pessa Fï¿½sica\nJ - Pessoa Jurï¿½dica");
 				
 				if(tipoCliente.equals("F")) {
 					cliente = new PessoaFisica();
@@ -39,10 +39,10 @@ public class Principal {
 					((PessoaFisica)cliente).setCpf(JOptionPane.showInputDialog(null,"CPF do Cliente:"));
 				} else if (tipoCliente.equals("J")) {
 					cliente = new PessoaJuridica();
-					((PessoaJuridica)cliente).setRazaoSocial(JOptionPane.showInputDialog(null,"Razão Social: "));
+					((PessoaJuridica)cliente).setRazaoSocial(JOptionPane.showInputDialog(null,"Razï¿½o Social: "));
 					((PessoaJuridica)cliente).setCnpj(JOptionPane.showInputDialog(null,"CNPJ do Cliente:"));
 				} else {
-					JOptionPane.showInputDialog(null,"OPÇÃO INVÁLIDA!Encerrando o programa...");
+					JOptionPane.showInputDialog(null,"OPï¿½ï¿½O INVï¿½LIDA!Encerrando o programa...");
 					return;
 				}
 				
@@ -55,7 +55,7 @@ public class Principal {
 				Conta conta;
 				
 				String tipoConta = JOptionPane.showInputDialog(null,"Tipo de conta a ser criada:\n"+
-						"C - Conta Corrente\nP - Conta Poupança");
+						"C - Conta Corrente\nP - Conta Poupanï¿½a");
 				if(tipoConta.equals("P")) {
 					conta = new ContaPoupanca(cliente,aniversario,rendimento);
 				} else {
@@ -72,14 +72,14 @@ public class Principal {
 				
 				do {
 					String mensagem = "SALDO EM CONTA: "+ conta.getSaldoFormatado()+ "\n\n"+
-							"OPÇÕES: \n1 - Depositar valor\n2 - Sacar valor\n3 - Saldo\n4 - Finalizar";
+							"OPï¿½ï¿½ES: \n1 - Depositar valor\n2 - Sacar valor\n3 - Saldo\n4 - Finalizar";
 					try {
 						opcao = Integer.parseInt(JOptionPane.showInputDialog(null,mensagem));
 						switch (opcao) {
 						case 1:
-							ret = JOptionPane.showInputDialog(null,"Valor do depósito");
+							ret = JOptionPane.showInputDialog(null,"Valor do depï¿½sito");
 							conta.depositar(Double.parseDouble(ret));
-							JOptionPane.showMessageDialog(null, "Depósito realizado!");
+							JOptionPane.showMessageDialog(null, "Depï¿½sito realizado!");
 							break;
 						case 2:
 							ret = JOptionPane.showInputDialog(null,"Valor do saque:");
@@ -90,18 +90,18 @@ public class Principal {
 							}
 						}
 					} catch (NumberFormatException ex) {
-						JOptionPane.showMessageDialog(null, "VALOR INVÁLIDO!");
+						JOptionPane.showMessageDialog(null, "VALOR INVï¿½LIDO!");
 					}
 				} while ((opcao ==1)||(opcao==2));
 			
 			} else if (opcaoPrincipal.equals("2")) {
 				
 				if(agencia.getContas().size()==0) {
-					JOptionPane.showMessageDialog(null, "NÃO HÁ CONTAS CADASTRADAS NO MOMENTO.");
+					JOptionPane.showMessageDialog(null, "Nï¿½O Hï¿½ CONTAS CADASTRADAS NO MOMENTO.");
 				} else {
-					JOptionPane.showMessageDialog(null, "A Agência "+agencia.getNumero()+" - "
+					JOptionPane.showMessageDialog(null, "A Agï¿½ncia "+agencia.getNumero()+" - "
 							+agencia.getNome()+" possui "+agencia.getContas().size()
-							+"conta(s). \n\nVeja quais são nas próximas telas");
+							+"conta(s). \n\nVeja quais sï¿½o nas prï¿½ximas telas");
 				
 					for(Conta umaConta:agencia.getContas()) {
 						JOptionPane.showMessageDialog(null, umaConta.listarDados());
