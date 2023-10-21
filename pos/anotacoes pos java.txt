@@ -1,0 +1,194 @@
+Pos-graduação = Estácio
+Conceitos de POO:
+pacotes - São usados para organizar classes e demais identificadores. Possibilita que duas ou mais classes tenham o mesmo nome. Podemos nomeá-las usando subníveis, dividindo-os com pontos.
+classes - blocos fundamentais de um sistema. Serve como moldes para objetos
+Objetos - Cópia ou instância de uma classe
+campos - um estado de um objeto, também chamado de conjunto de atributos ou propriedades
+métodos - Sãos os nomes dados às funções desempenhadas pela classe,suas ações. São implementações de que foi definido como operações em UML.
+métodos estáticos - São aqueles executados diretamente de uma classe e não de um objeto instanciado a partir dela.
+Abstração - 
+Herança - cria uma classe utilizando outra como base. forma de reutilização de código. facilita a organização e atualização de código
+Polimorfismo - Várias maneiras com que um mesmo métoo pode ser executado em diversas classes
+Encapsulamento - fechar o acesso total as classes permitindo o seu gerenciamento por meio de getters, setters e construtores
+sobrecarga de métodos - Podemos definir versões diferentes de um mesmo método(ou seja, com um mesmo nome) em uma mesma classe, diferenciando-os por seus parâmetros.
+Garbage Collector - Coleta de lixo ou lixeiro, procura por objetos não mais utilizados no programa para que possam ser apagados da memória liberando espaço nela. 
+Annotion - uma anotação Java, não é obrigatória, funciona como uma espécie de "comentário inteligente" e é considerado uma boa prática de programação Java.
+Array de Objetos - 
+Coleções de Objetos -
+interface - são maneiras de se estabelecer o que uma classe deverá ter em sua implementação.
+composição em UML - a composição indica que um todo é composta por várias partes.
+agregação em UML -  
+
+Atenção:
+usar sobrecarga de métodos podem facilitar a manutenção e legibilidade do código, por exemplo, em vez de termos dois métodos, depositarEmDinheiro(double valor) e depositarEmCheque(double valor, int numeroDoCheque) poderiamos ter um único método depositar,depositar(double valor) e depositar(double valor, int numeroDoCheque).
+Usar StringBuilder é melhor do que usar string caso haja concatenação de strings, pois String realiza novas cópias em vez de realmente juntar
+
+Projeto - padrões
+- camel case com inicial em Maiuscula
+Pacotes - padrões
+- sempre com letras minusculas
+- são usados para organizar classes e demais identificadores, dessa forma podemos ter duas ou mais classes com o mesmo nome, mas que pertençam a pacotes diversos
+- podemos criar subníveis dividindo-os com pontos, exemplo: banco.modelo, banco.tela
+
+Classes - padrões
+- camel case com inicial em Maiuscula
+- Nomes de classes devem ser definidos no singular
+- para Classes com duas ou mais palavras no nome, Capitalize sempre a primeira letra de cada palavra
+
+Métodos -padrões
+- camel case com inicial em minusculas
+- o nome de um metodo deve ser formado por um verbo + local da ação, exemplo: CalcularFatorial
+
+Variáveis - padrões
+- Nomes de variáveis (tanto as locais em um método quanto as que são campos de uma classe) devem começar com letras minusculas, capitalizando as demais palavras
+- evitar nomes resumidos que prejudiquem a legibilidade
+
+Getters e Setters - padrões
+- colocar esses métodos após os construtores
+- colocar o método setter logo após o getter, se houver
+- o nome deve começar com get ou set em letras minusculas e seguidos do nome do campo com sua primeira letra em Maiuscula
+- seu modificador é public e sempre tem retorno de algum tipo de dado(getter) e com exceção do método setter que sempre será void
+- usando essa forma podemos controlar o conteúdo mostrado ou inserido à classe
+
+Construtores - padrões
+- colocar após a declaração dos campos da classe
+
+Modificadores de visibilidade
+- public
+- private - oculta do mundo exterior e uso de campos e métodos somente dentro da própria classe
+- protected - oculta do mundo exterior e uso de campos e métodos dentro da própria classe e subclasses
+-packagePrivate (ou seja, sem modificador) - acessado somente dentro da própria classe ou do mesmo pacotes
+
+Getters e Setters
+- método getter - método público existente dentro de uma classe. Usado para obter um valor interno de um campo(variável private ou protected)
+- método setter - método público existente dentro de uma classe. alterar o conteúdo de um campo oculto
+
+Superclasses e subclasses
+- superclasse: classe mais genérica que possui características que serão herdadas pelas demais
+- subclasses: são as classes especializadas que herdam das superclasses
+É possível utilizar recursos da superclasse dentro da subclasse 
+desde de que se utilize a palavra-chave super e 
+que estes recursos sejam declarados como protected ou public
+exemplo: ... super.listarDados() ... ou tbm, public PessoaFisica(String Cidade, String estado, String nome, String cpf){ super(cidade,estado); this.nome =nome;....}
+exemplo: um comando super() dentro de um construtor faz com que seja executado primeiro o construtor da superclasse e em seguida as instruções da subclasse
+
+Recursos de interface gráfica
+Framework Swing
+classe JOptionPane
+método showMessageDialog 
+exemplo: 
+...
+import javax.swing.*;
+...
+JOptionPane.showMessageDialog(null, "mensagem");
+...
+
+outro método importante: showInputDialog
+exemplo: JOptionPane.showInputDialog(null,"Qual é o seu nome?");
+
+método: parseInt
+exemplo: int diasEmAtraso = Integer.parseInt(dias);
+
+método: parseDouble
+double valorDaConta = Double.parseDouble(valor);
+
+instrução: try..catch
+exemplo: ...; try{...} catch(NumberFormatException ex) {...}
+
+método: equals()
+exemplo: String nova, velha; nova = "Joana"; velha = "Antonia"; nova.equals(velha);
+
+classe: StringBuilder
+motivo:economia de memória, string mutável sem degradação do desempenho, construtor de strings
+exemplo: StringBuilder resultado = new StringBuilder();
+
+método: append
+classe: StringBuilder
+motivo: concatena novo conteúdo a string
+exemplo: resultado.append("Nome do candidato 1\n");
+
+método:toString();
+classe: StringBuilder
+motivo: converte de objeto StringBuilder para uma string tradicional
+exemplo: String stringResultante = resultado.toString();
+
+operador: ? (ternário)
+classe: nenhuma
+motivo: testa se um resultado é verdadeiro ou falso
+exemplo: String resultadoDoAluno = (nota >=6 ? "Aprovado" : "Reprovado");
+
+método: contains("texto ou caractere")
+returno: boolean
+classe: String
+motivo: verifica o trecho de código está contido na string que utiliza o método
+exemplo: nome.contains(" ") 
+
+método: substring(ind start, ind end)
+returno: String
+classe: String
+motivo: retorna o trecho de código está contido na string limitado pelo indice inicial e final
+exemplo: nome.substring(0,5);
+
+método: indexOf(' caracter')
+returno: int
+classe: String
+motivo: retorna o indice numérico positivo, diminuído de uma posição, se encontrar o caracter na na string e -1 se não encontrar
+exemplo:  nome.substring(0,indexOf(' '));
+
+ instrução: switch
+ sintaxe; switch (<variável>){ case 1: <instruções>; break; case n: <instrucoes>; [break;][default: <instrucoes>] }
+ 
+ instrução: do..while
+ sintaxe: do{... instruções ...} while (condição);
+ 
+ instrução: instanceof
+ descrição: verifica se determinado objeto é uma instância de uma determinada Classe, sendo retorna true, caso contrário, false
+ sintaxe; <objeto> instanceof <Classe> 
+ exemplo: cliente instanceof PessoaFisica
+ retorno: boolean
+
+ método: getInstance().get(Calendar.DAY_OF_MONTH)
+ returno: int
+ classe: Calendar
+ motivo: retorna o dia atual (o dia da consulta)
+ exemplo:  Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+
+ annotation: @Override
+ significado: sinaliza para o compilador que este método está sobrescrevendo outro existente na superclasse
+ 
+ instrução: []
+ descrição: declaração de vetor
+ exemplo: int[] numerosDaSorte = new int[6];
+ exemplo: Cliente[] clientes = new Cliente[5];
+
+ Forma de Declarar:List <Classe> lista = new ArrayList<>();
+ classe:ArrayList
+ importar:classe - java.util.ArrayList e interface: java.util.List
+ interface: List - para implementação de listas em Java
+ descrição: classe de coleção. Permitem criar objetos containers de outros objetos, ou seja, vetores com tamanho dinâmico.
+ <classe>: nome da classe de objetos que serão colocados na lista
+ 
+ método: add - Para armazernar um objeto no ArrayList
+ classe:ArrayList
+ exemplo: List <classe> lista = new ArrayList<>(); Classe objeto = new Classe(); lista.add(objeto);
+
+ método: remove - Para remover um objeto no ArrayList
+ classe:ArrayList
+ exemplo: lista.remove(objeto);
+ 
+ método: size()- Para saber quantos objetos existem no ArrayList
+ classe:ArrayList
+ exemplo: int totalDeObjetos = lista.size();
+
+ instrução: for(Classe objeto: lista)- Para percorrer autmaticamente os objetos existentes no ArrayList
+ classe:ArrayList
+ exemplo: for(Classe objeto: lista){ objeto.método(); }
+
+
+ 
+
+pdf_anexo_exercicios - 10
+pdf.pdf = 108/117
+
+
+
